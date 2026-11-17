@@ -13,7 +13,7 @@
         app:layout_constraintBottom_toTopOf="@+id/controlsLayout"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Индикатор выбранного разрешения сенсора -->
+    <!-- Индикатор фактического разрешения снимка -->
     <TextView
         android:id="@+id/tvResolutionBadge"
         android:layout_width="wrap_content"
@@ -50,33 +50,24 @@
             android:textSize="12sp"
             android:visibility="gone" />
 
-        <!-- Строка со статусом и переключателем RAW -->
-        <LinearLayout
+        <!-- Статус -->
+        <TextView
+            android:id="@+id/tvStatus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:text="Выберите время и параметры"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/tvStatus"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Выберите время и параметры"
-                android:textColor="#FFFFFF"
-                android:textSize="15sp" />
-
-            <CheckBox
-                android:id="@+id/cbRaw"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:buttonTint="#00E676"
-                android:text="RAW (DNG)"
-                android:textColor="#00E676"
-                android:textSize="13sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+        <!-- Выбор разрешения снимка -->
+        <Spinner
+            android:id="@+id/spinnerResolution"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:minHeight="48dp"
+            android:popupBackground="#212121" />
 
         <LinearLayout
             android:layout_width="match_parent"
